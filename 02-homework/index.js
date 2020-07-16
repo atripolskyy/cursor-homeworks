@@ -1,11 +1,15 @@
 let numberN = +prompt(`Введіть число N`);
 while (!Number.isInteger(numberN)) {
-    numberN = +prompt(`Введіть число N. Значення має бути цілим числом!`);
+    numberN = +prompt(`Введіть число N. Значення має бути цілим числом.`);
 }
 
 let numberM = +prompt(`Введіть число M`);
-while (!Number.isInteger(numberM) || numberM === 0) {
-    numberM = +prompt(`Введіть число M. ${numberM === 0 ? `Значення не має дорівнювати 0!` : `Значення має бути цілим числом!`}`);
+while (!Number.isInteger(numberM) || (numberM <= numberN)) {
+    if (numberM <= numberN) {
+        numberM = +prompt(`Введіть число M. Значення має бути більшим за число ${numberN}.`);
+    } else {
+        numberM = +prompt(`Введіть число M. Значення має бути цілим числом.`);
+    }
 }
 
 const isPaired = confirm(`Пропускати парні числа?`);
