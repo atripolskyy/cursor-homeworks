@@ -33,7 +33,7 @@ const costOfGoods = Math.floor(totalAmount) / 2;
 
 const netSalesRevenue = Math.round((costOfGoods - (totalAmount * randomDiscount / 100)) * 100) / 100;
 
-let results = `Максимальна ціна: ${maxPrice}
+const results = `Максимальна ціна: ${maxPrice}
 Мінімальна ціна: ${minPrice}
 Вартість всіх товарів: ${totalAmount}
 Вартість всіх товарів (ціна товарів без копійок): ${totalAmountRoundedPrices}
