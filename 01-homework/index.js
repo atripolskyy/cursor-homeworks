@@ -1,9 +1,9 @@
-const lemonPrice = 15.678;
-const applePrice = 123.965;
-const orangePrice = 90.2345;
-const customerMoney = 500;
+const PRODUCT_1 = 15.678;
+const PRODUCT_2 = 123.965;
+const PRODUCT_3 = 90.2345;
+const CUSTOMER_MONEY = 500;
 
-const productsPrices = [lemonPrice, applePrice, orangePrice];
+const productsPrices = [PRODUCT_1, PRODUCT_2, PRODUCT_3];
 
 const maxPrice = Math.max(...productsPrices);
 const minPrice = Math.min(...productsPrices);
@@ -19,7 +19,7 @@ const roundHundredBigger = Math.ceil(totalAmountRoundedPrices / 100) * 100;
 const roundHundredLower = Math.floor(totalAmountRoundedPrices / 100) * 100;
 const roundHundredLowerIsEven = roundHundredLower % 2 === 0 ? true : false;
 
-const purchaseChange = customerMoney - totalAmount;
+const purchaseChange = CUSTOMER_MONEY - totalAmount;
 
 const averagePrice = totalAmount / productsPrices.length;
 const averagePriceTwoDecimal = Math.round(averagePrice * 100) / 100;
