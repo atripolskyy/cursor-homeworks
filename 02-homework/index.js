@@ -1,14 +1,48 @@
-let numberN = +prompt(`Введіть число N`);
-while (!Number.isInteger(numberN)) {
-    numberN = +prompt(`Введіть число N. Значення має бути цілим числом.`);
+let numberN = null;
+let numberM = null;
+let isIntegerNumberN = false;
+let isIntegerNumberM = false;
+let errorMessage = '';
+
+while(!isIntegerNumberN) {
+    numberN = prompt(`${errorMessage}Введіть число N.`);
+
+    if (numberN && numberN.replace(/\s/g, '') !== '') {
+        errorMessage = '';
+
+        if (Number.isInteger(+numberN)) {
+            isIntegerNumberN = true;
+            numberN = +numberN;
+
+            errorMessage = '';
+        } else {
+            errorMessage = 'Ви ввели стрічку, а не число. ';
+        }
+    } else {
+        errorMessage = 'Ви ввели пусту стрічку. ';
+    }
 }
 
-let numberM = +prompt(`Введіть число M`);
-while (!Number.isInteger(numberM) || (numberM <= numberN)) {
-    if (numberM <= numberN) {
-        numberM = +prompt(`Введіть число M. Значення має бути більшим за число ${numberN}.`);
+while(!isIntegerNumberM) {
+    numberM = prompt(`${errorMessage}Введіть число M.`);
+
+    if (numberM && numberM.replace(/\s/g, '') !== '') {
+        errorMessage = '';
+
+        if (Number.isInteger(+numberM)) {
+            if (+numberM <= numberN) {
+                errorMessage = `Значення має бути більшим за число ${numberN}. `;
+            } else {
+                isIntegerNumberM = true;
+                numberM = +numberM;
+
+                errorMessage = '';
+            }
+        } else {
+            errorMessage = 'Ви ввели стрічку, а не число. ';
+        }
     } else {
-        numberM = +prompt(`Введіть число M. Значення має бути цілим числом.`);
+        errorMessage = 'Ви ввели пусту стрічку. ';
     }
 }
 
