@@ -16,7 +16,7 @@ while(!isIntegerNumberN) {
 
             errorMessage = '';
         } else {
-            errorMessage = 'Ви ввели стрічку, а не число. ';
+            errorMessage = 'Значення має бути цілим числом. ';
         }
     } else {
         errorMessage = 'Ви ввели пусту стрічку. ';
@@ -39,7 +39,7 @@ while(!isIntegerNumberM) {
                 errorMessage = '';
             }
         } else {
-            errorMessage = 'Ви ввели стрічку, а не число. ';
+            errorMessage = 'Значення має бути цілим числом. ';
         }
     } else {
         errorMessage = 'Ви ввели пусту стрічку. ';
