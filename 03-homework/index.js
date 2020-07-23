@@ -21,8 +21,7 @@ const getPow = (number, exponent) => {
  * Task #3. Створити функцію, яка форматує ім'я, роблячи першу букву великою.
  */
 const getFirstUpper = word => {
-  const newWord = word.toLowerCase();
-  return newWord[0].toUpperCase() + newWord.substr(1);
+  return word.toLowerCase()[0].toUpperCase() + word.toLowerCase().substr(1);
 }
 
 /**
