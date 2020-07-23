@@ -37,7 +37,7 @@ const getSalary = salary => {
  * Task #5. Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
  */
 const getRandomNumber = (n, m) => {
-  return Math.ceil( Math.random() * (m - n) ) + n;
+  return Math.round( Math.random() * (m - n) ) + n;
 }
 
 /**
@@ -143,7 +143,7 @@ console.log(`Task #1: `, getMaxDigit(1236));
 console.log(`Task #2: `, getPow(2, 4));
 console.log(`Task #3: `, getFirstUpper(`вЛАД`));
 console.log(`Task #4: `, getSalary(1000));
-console.log(`Task #5: `, getRandomNumber(1, 10));
+console.log(`Task #5: `, getRandomNumber(1, 3));
 console.log(`Task #6: `, countLetter(`а`, `Асталавіста`));
 console.log(`Task #7: `, convertCurrency(`250uah`));
 console.log(`Task #8: `, getRandomPassword(4));
