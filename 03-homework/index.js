@@ -104,14 +104,9 @@ const deleteLetters = (character, word) => {
  */
 const isPalyndrom = word => {
   const cleanWord = word.toLowerCase().replace(/\s/g, ``);
-  const charArrayBase = cleanWord.split(``);
-  const charArrayReverse = cleanWord.split(``).reverse();
+  const charArrayReverse = cleanWord.split(``).reverse().join(``);
 
-  let checkIsPalyndrom = false;
-  for (let i = 0; i < charArrayBase.length; i++) {
-    checkIsPalyndrom = charArrayBase[i] === charArrayReverse[i] ? true : false;
-  }
-  return checkIsPalyndrom;
+  return cleanWord === charArrayReverse;
 }
 
 /**
