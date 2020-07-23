@@ -121,7 +121,7 @@ const deleteDuplicateLetter = sentence => {
   const sentenceNoSpaces = sentence.replace(/\s/g, ``);
   const charArray = sentenceNoSpaces.toLowerCase().split(``);
 
-  // count each character in sentence, and escape white spaces
+  // count each character in sentence
   let countChars = {};
   for (let i = 0; i < charArray.length; i++) {
     if (countChars[charArray[i]]) {
