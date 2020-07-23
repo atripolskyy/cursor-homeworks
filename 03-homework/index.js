@@ -145,7 +145,7 @@ console.log(`Task #3: `, getFirstUpper(`вЛАД`));
 console.log(`Task #4: `, getSalary(1000));
 console.log(`Task #5: `, getRandomNumber(1, 10));
 console.log(`Task #6: `, countLetter(`а`, `Асталавіста`));
-console.log(`Task #7: `, convertCurrency(`250`));
+console.log(`Task #7: `, convertCurrency(`250uah`));
 console.log(`Task #8: `, getRandomPassword(4));
 console.log(`Task #9: `, deleteLetters(`a`, `blablabla`));
 console.log(`Task #10: `, isPalyndrom(`Я несу гУсеНя`));
