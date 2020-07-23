@@ -77,14 +77,72 @@ const convertCurrency = value => {
 }
 
 /**
+ * Task #8. Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам.
+ */
+const getRandomPassword = (passLength = 8) => {
+  let numsArray = [];
+  for (let i = 0; i < passLength; i++) {
+    numsArray.push( Math.floor(Math.random() * 10) );
+  }
+  return numsArray.join(``);
+}
+
+/**
  * Task #9. Створіть функцію, яка видаляє всі букви з речення.
  */
 const deleteLetters = (character, word) => {
   word = word.toLowerCase();
   character = character.toLowerCase();
+
   const regExpPattern = new RegExp(character, `g`);
 
   return word.replace(regExpPattern, ``);
+}
+
+/**
+ * Task #10. Створіть функцію, яка перевіряє, чи є слово паліндромом.
+ */
+const isPalyndrom = word => {
+  const cleanWord = word.toLowerCase().replace(/\s/g, ``);
+  const charArrayBase = cleanWord.split(``);
+  const charArrayReverse = cleanWord.split(``).reverse();
+
+  let checkIsPalyndrom = false;
+  for (let i = 0; i < charArrayBase.length; i++) {
+    checkIsPalyndrom = charArrayBase[i] === charArrayReverse[i] ? true : false;
+  }
+  return checkIsPalyndrom;
+}
+
+/**
+ * Task #11. Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу.
+ */
+const deleteDuplicateLetter = sentence => {
+  const sentenceNoSpaces = sentence.replace(/\s/g, ``);
+  const charArray = sentenceNoSpaces.toLowerCase().split(``);
+
+  // count each character in sentence, and escape white spaces
+  let countChars = {};
+  for (let i = 0; i < charArray.length; i++) {
+    if (countChars[charArray[i]]) {
+      countChars[charArray[i]]++;
+    } else {
+      countChars[charArray[i]] = 1;
+    }
+  }
+
+  // get characters which we will remove later
+  let charsToReplace = [];
+  for (const [key, value] of Object.entries(countChars)) {
+    if (value > 1) {
+      charsToReplace.push(key.toUpperCase());
+      charsToReplace.push(key);
+    }
+  }
+  const replacePattern = `[${charsToReplace.join('')}]`;
+  const regExpPattern = new RegExp(replacePattern, `g`);
+
+  return sentenceNoSpaces.replace(regExpPattern, ``);
 }
 
 console.log(`Task #1: `, getMaxDigit(1236));
@@ -94,4 +152,7 @@ console.log(`Task #4: `, getSalary(1000));
 console.log(`Task #5: `, getRandomNumber(1, 10));
 console.log(`Task #6: `, countLetter(`а`, `Асталавіста`));
 console.log(`Task #7: `, convertCurrency(`250`));
+console.log(`Task #8: `, getRandomPassword(4));
 console.log(`Task #9: `, deleteLetters(`a`, `blablabla`));
+console.log(`Task #10: `, isPalyndrom(`Я несу гУсеНя`));
+console.log(`Task #11: `, deleteDuplicateLetter(`Бісквіт був дуже ніжним`));
