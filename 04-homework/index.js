@@ -50,7 +50,7 @@ const pairsThemes = getPairsThemes(pairs, themes);
 console.log('Пари та теми проєктів: ', pairsThemes);
 
 const studentsMarks = getStudentsMarks(students, marks);
-console.log(studentsMarks);
+console.log('Оцінки(marks) зі студентом: ', studentsMarks);
 
 const pairsMarks = getPairsMarks(pairsThemes);
-console.log(pairsMarks);
+console.log('Для кожної пари випадкова оцінка(від 1 до 5) за проєкт: ', pairsMarks);
