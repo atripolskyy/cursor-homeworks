@@ -1,6 +1,7 @@
 const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
+const MAX_MARK_VALUE = 5;
 
 const getPairs = students => {
   let studentsPairs = [];
@@ -38,7 +39,7 @@ const getPairsMarks = pairs => {
   let pairsMarks = [...pairs];
 
   for (let i = 0; i < pairsMarks.length; i++) {
-    pairsMarks[i].push(Math.ceil(Math.random() * 5));
+    pairsMarks[i].push(Math.ceil(Math.random() * MAX_MARK_VALUE));
   }
   return pairsMarks;
 }
