@@ -91,4 +91,4 @@ const replaceBadWords = (string, stringsBad = []) => {
     return word;
   }).join(' ');
 }
-console.log('replaceBadWords("Are you fucking kidding, shit ass?"): ', replaceBadWords("Are you fucking kidding, shit ass?", ['ass']));
+console.log(`replaceBadWords('Are you fucking kidding, shit ass?', ['ass']): `, replaceBadWords('Are you fucking kidding, shit ass?', ['ass']));
