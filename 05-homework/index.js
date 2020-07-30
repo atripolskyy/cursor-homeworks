@@ -16,10 +16,11 @@ const getRandomArray = (length, min, max) => {
 
 console.log('getRandomArray(15, 1, 100): ', getRandomArray(15, 1, 100));
 
+
 /**
- * Вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+ * Функція що вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
  *
- * @param  {array} numbers
+ * @param  {array} ...numbers
  * @returns {number|array} мода серед цілих чисел
  */
 const getModa = (...numbers) => {
@@ -47,3 +48,17 @@ const getModa = (...numbers) => {
 }
 
 console.log( 'getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6): ', getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6) );
+
+
+/**
+ * Функція яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+ *
+ * @param  {array} ...numbers
+ * @returns {number} average - середнє арифметичне всіх переданих в неї аргументів
+ */
+const getAverage = (...numbers) => {
+  const arrayIntNumbers = numbers.filter(currentNumber => Number.isInteger(currentNumber));
+  return arrayIntNumbers.reduce((accumulator, item) => accumulator + item, 0) / arrayIntNumbers.length;
+}
+
+console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2): ', getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
