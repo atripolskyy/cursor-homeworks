@@ -95,6 +95,7 @@ const replaceBadWords = (string, stringsBad = []) => {
  * Пробіли завжди видаляються. Рядок приводится до нижнього регістру.
  *
  * @param {string} word
+ * @returns  {string|array} - повертає слово якщо букв менше трьох, або масив по 3 букви
  */
 const divideByThree = word => {
   const PART_LENGTH = 3;
