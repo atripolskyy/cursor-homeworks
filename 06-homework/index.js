@@ -113,6 +113,7 @@ const getBestStudent = students => {
 const calculateWordLetters = word => {
   const stringObject = {};
   [...word].map(char => {
+    char = char.toLowerCase();
     if (stringObject[char]) {
       stringObject[char] += 1;
     } else {
