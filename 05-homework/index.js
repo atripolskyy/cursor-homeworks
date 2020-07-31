@@ -13,7 +13,6 @@ const getRandomArray = (length, min, max) => {
   }
   return randomArray;
 }
-console.log('getRandomArray(15, 1, 100): ', getRandomArray(15, 1, 100));
 
 
 /**
@@ -45,7 +44,6 @@ const getModa = (...numbers) => {
 
   return moda.length > 1 ? moda : moda[0];
 }
-console.log( 'getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6): ', getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6) );
 
 
 /**
@@ -58,7 +56,6 @@ const getAverage = (...numbers) => {
   const arrayIntNumbers = numbers.filter(currentNumber => Number.isInteger(currentNumber));
   return arrayIntNumbers.reduce((accumulator, item) => accumulator + item, 0) / arrayIntNumbers.length;
 }
-console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2): ', getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
 
 /**
@@ -70,7 +67,6 @@ console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2): '
 const filterEvenNumbers = (...numbers) => {
   return numbers.filter(currentNumber => currentNumber % 2 !== 0);
 }
-console.log('filterEvenNumbers(1, 2, 3, 4, 5, 6): ', filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
 
 /**
@@ -91,28 +87,72 @@ const replaceBadWords = (string, stringsBad = []) => {
     return word;
   }).join(' ');
 }
-console.log(`replaceBadWords('Are you fucking kidding, shit ass?', ['ass']): `, replaceBadWords('Are you fucking kidding, shit ass?', ['ass']));
+
+
+/**
+ * Task #9. Функція яка розбиває кожне слово на умовні склади по 3 букви.
+ * Якщо букв менше трьох – не розбиває.
+ * Пробіли завжди видаляються. Рядок приводится до нижнього регістру.
+ *
+ * @param {string} word
+ */
+const divideByThree = word => {
+  const PART_LENGTH = 3;
+  const wordClean = word.replace(/\s/g, '').toLowerCase();
+  const partsArray = [];
+
+  if (wordClean.length < 3) return word.toLowerCase();
+
+  [...wordClean].forEach((item, index) => {
+    if (index % PART_LENGTH === 0) {
+      partsArray.push([...wordClean].slice(index, index + PART_LENGTH).join(''));
+    }
+  });
+
+  return partsArray;
+}
 
 
 /**
  * Task #10. Функція яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові, обмежити работу функції 10 буквами.
  *
  * @param {string} word вхідне слово
+ * @returns {array}
  */
-const generateCombinations = word => {
-  const MAX_CHARS = 10; // limit of chars to check
-  const arrayChars = word.toLowerCase().slice(0, MAX_CHARS).split('')
-  let variants = [];
+// const generateCombinations = word => {
+//   const MAX_CHARS = 10; // limit of chars to check
+//   const arrayChars = word.toLowerCase().slice(0, MAX_CHARS).split('');
+//   let shufflings = [];
+
+//   while (true) {
+//     let clone = arrayChars.slice();
+//     let shuffling = [];
+//     let period = 1;
+
+//     while (clone.length) {
+//       let index = Math.floor(shufflings.length / period) % clone.length;
+//       period *= clone.length;
+//       shuffling.push( clone.splice(index,1)[0] );
+//     }
+
+//     shufflings.push(shuffling);
+
+//     if (shufflings.length === period) return shufflings;
+//   }
+// }
+
+// console.log(generateCombinations('man'));
 
 
-  arrayChars.forEach((char, index, arrayChars) => {
-    const arr = [...arrayChars];
-    let removed = arr.splice(-index, 1);
+console.log('Task #1. getRandomArray(15, 1, 100): ', getRandomArray(15, 1, 100));
+console.log('Task #2. getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6): ',
+  getModa(55, 7, 55, 11, 57, 11, 2.1, 77, 57, 2.1, 23, 2.1, 57, 3, 2.1, 6));
 
-    // console.log(removed[0] + arr.join(''));
-    variants.push(removed[0] + arr.join(''));
-  });
+console.log('Task #3. getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2): ',
+  getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-  return variants;
-}
-console.log(`generateCombinations("man"): `, generateCombinations('man'));
+console.log('Task #5. filterEvenNumbers(1, 2, 3, 4, 5, 6): ', filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log(`Task #8. replaceBadWords('Are you fucking kidding, shit ass?', ['ass']): `,
+  replaceBadWords('Are you fucking kidding, shit ass?', ['ass']));
+
+console.log(`Task #9. divideByThree('Commander'): `, divideByThree('Commander'));
