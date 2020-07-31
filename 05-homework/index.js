@@ -92,3 +92,27 @@ const replaceBadWords = (string, stringsBad = []) => {
   }).join(' ');
 }
 console.log(`replaceBadWords('Are you fucking kidding, shit ass?', ['ass']): `, replaceBadWords('Are you fucking kidding, shit ass?', ['ass']));
+
+
+/**
+ * Task #10. Функція яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові, обмежити работу функції 10 буквами.
+ *
+ * @param {string} word вхідне слово
+ */
+const generateCombinations = word => {
+  const MAX_CHARS = 10; // limit of chars to check
+  const arrayChars = word.toLowerCase().slice(0, MAX_CHARS).split('')
+  let variants = [];
+
+
+  arrayChars.forEach((char, index, arrayChars) => {
+    const arr = [...arrayChars];
+    let removed = arr.splice(-index, 1);
+
+    // console.log(removed[0] + arr.join(''));
+    variants.push(removed[0] + arr.join(''));
+  });
+
+  return variants;
+}
+console.log(`generateCombinations("man"): `, generateCombinations('man'));
