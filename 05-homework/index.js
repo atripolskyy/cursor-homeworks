@@ -9,7 +9,7 @@
 const getRandomArray = (length, min, max) => {
   let randomArray = [];
   for (let i = 0; i < length; i++) {
-    randomArray.push( Math.round(Math.random() * (max - min)) + min );
+    randomArray = [...randomArray, Math.round(Math.random() * (max - min)) + min];
   }
   return randomArray;
 }
@@ -34,12 +34,11 @@ const getModa = (...numbers) => {
       if (frequency > maxFrequency) {
         maxFrequency = frequency;
       }
-
       countNumbers[currentNumber] = frequency;
     });
 
   for (const [key, value] of Object.entries(countNumbers)) {
-    if (value === maxFrequency) moda.push(key);
+    if (value === maxFrequency) moda = [...moda, key];
   }
 
   return moda.length > 1 ? moda : moda[0];
@@ -77,10 +76,10 @@ const filterEvenNumbers = (...numbers) => {
  * @returns  {string} фраза в якій погані слова замінені на зірочки
  */
 const replaceBadWords = (string, stringsBad = []) => {
-  stringsBad = ['shit', 'fuck', ...stringsBad];
+  let arrayBadWords = ['shit', 'fuck', ...stringsBad];
 
   return string.split(' ').map(word => {
-    stringsBad.forEach(string => {
+    arrayBadWords.forEach(string => {
       const replacement = string.replace(/[A-Za-z]/g, '*');
       word = word.replace(string, replacement);
     });
@@ -100,13 +99,13 @@ const replaceBadWords = (string, stringsBad = []) => {
 const divideByThree = word => {
   const PART_LENGTH = 3;
   const wordClean = word.replace(/\s/g, '').toLowerCase();
-  const partsArray = [];
+  let partsArray = [];
 
   if (wordClean.length < 3) return word.toLowerCase();
 
   [...wordClean].forEach((item, index) => {
     if (index % PART_LENGTH === 0) {
-      partsArray.push([...wordClean].slice(index, index + PART_LENGTH).join(''));
+      partsArray = [...partsArray, [...wordClean].slice(index, index + PART_LENGTH).join('')];
     }
   });
 
