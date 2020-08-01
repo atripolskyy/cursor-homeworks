@@ -6,9 +6,9 @@ const MAX_MARK_VALUE = 5;
 const getPairs = students => {
   let studentsPairs = [];
 
-  studentsPairs.push([students[0], students[2]]);
-  studentsPairs.push([students[1], students[3]]);
-  studentsPairs.push([students[4], students[5]]);
+  studentsPairs = [...studentsPairs, [students[0], students[2]]];
+  studentsPairs = [...studentsPairs, [students[1], students[3]]];
+  studentsPairs = [...studentsPairs, [students[4], students[5]]];
 
   return studentsPairs;
 };
@@ -17,11 +17,11 @@ const getPairsThemes = (pairs, themes) => {
   let pairsThemes = [];
 
   for (const [boy, girl] of pairs) {
-    pairsThemes.push([`${boy} і ${girl}`]);
+    pairsThemes = [...pairsThemes, [`${boy} і ${girl}`]];
   }
 
   for (let i = 0; i < pairsThemes.length; i++) {
-    pairsThemes[i].push(themes[i]);
+    pairsThemes[i] = [...pairsThemes[i], themes[i]];
   }
   return pairsThemes;
 }
@@ -30,16 +30,16 @@ const getStudentsMarks = (students, marks) => {
   let studentsMarks = [];
 
   for (let i = 0; i < students.length; i++) {
-    studentsMarks.push([students[i], marks[i]]);
+    studentsMarks = [...studentsMarks, [students[i], marks[i]]];
   }
   return studentsMarks;
 }
 
-const getPairsMarks = pairs => {
-  let pairsMarks = [...pairs];
+const getPairsMarks = pairsWithTheme => {
+  let pairsMarks = [...pairsWithTheme];
 
   for (let i = 0; i < pairsMarks.length; i++) {
-    pairsMarks[i].push(Math.ceil(Math.random() * MAX_MARK_VALUE));
+    pairsMarks[i] = [...pairsMarks[i], Math.ceil(Math.random() * MAX_MARK_VALUE)];
   }
   return pairsMarks;
 }
