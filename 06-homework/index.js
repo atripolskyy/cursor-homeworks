@@ -33,7 +33,7 @@ const students = [{
  */
 const getSubjects = student => {
   const setFirstCharUpper = word => {
-    return word.toLowerCase()[0].toUpperCase() + word.toLowerCase().substr(1);
+    return word.toLowerCase()[0].toUpperCase() + word.toLowerCase().substring(1);
   }
   return Object.keys(student.subjects).map(subject => setFirstCharUpper(subject.replace('_', ' ')));
 }
