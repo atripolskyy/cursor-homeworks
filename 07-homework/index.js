@@ -10,7 +10,6 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 const getMyTaxes = function(salary) {
   return salary * this.tax;
 }
-console.log(`getMyTaxes.call(ukraine, 100): `, getMyTaxes.call(ukraine, 100));
 
 
 /**
@@ -22,7 +21,6 @@ console.log(`getMyTaxes.call(ukraine, 100): `, getMyTaxes.call(ukraine, 100));
 const getMiddleTaxes = function() {
   return this.tax * this.middleSalary;
 }
-console.log(`getMiddleTaxes.call(latvia): `, getMiddleTaxes.call(latvia));
 
 
 /**
@@ -34,7 +32,6 @@ console.log(`getMiddleTaxes.call(latvia): `, getMiddleTaxes.call(latvia));
 const getTotalTaxes = function() {
   return this.tax * this.middleSalary * this.vacancies;
 }
-console.log(`getTotalTaxes.call(litva): `, getTotalTaxes.call(litva));
 
 
 /**
@@ -57,4 +54,10 @@ const getMySalary = function() {
     console.dir( { salary, taxes, profit } );
   }, 10000);
 }
+
+
+console.log(`Task #1. getMyTaxes.call(ukraine, 100): `, getMyTaxes.call(ukraine, 100));
+console.log(`Task #2. getMiddleTaxes.call(latvia): `, getMiddleTaxes.call(latvia));
+console.log(`Task #3. getTotalTaxes.call(litva): `, getTotalTaxes.call(litva));
+console.log(`Task #4. getMySalary.call(ukraine):`);
 getMySalary.call(ukraine);
