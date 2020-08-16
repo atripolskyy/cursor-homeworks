@@ -1,0 +1,17 @@
+._code-area {
+  width: 300px;
+  height: 100px;
+  border: 1px solid #000000;
+  padding: 1rem;
+
+  color: #000000;
+  background-color: rgb(206, 206, 206);
+}
+
+.blocks-list {
+  display: grid;
+}
+
+.block {
+  background-color: red;
+}
