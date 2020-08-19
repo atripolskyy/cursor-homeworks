@@ -49,10 +49,10 @@ const getMySalary = function() {
   const MAX_SALARY = 2000;
   const tax = this.tax;
 
-  const salaryInterval = setInterval(function() {
-    let salary = Math.round(Math.random() * (MAX_SALARY - MIN_SALARY)) + MIN_SALARY;
-    let taxes = salary * tax;
-    let profit = salary - taxes;
+  setInterval(function() {
+    const salary = Math.round(Math.random() * (MAX_SALARY - MIN_SALARY)) + MIN_SALARY;
+    const taxes = salary * tax;
+    const profit = salary - taxes;
 
     console.dir( { salary, taxes, profit } );
   }, 10000);
