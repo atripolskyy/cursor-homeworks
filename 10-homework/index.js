@@ -7,11 +7,16 @@ const getRandomColorHsl = () => {
   return `hsl(${hslValue}, 70%, 32%)`;
 }
 
-function handleKeydown(e) {
-  const soundNode = document.getElementById(e.code)
+
+/**
+ * Mark active button. Add styles to target button with appropriate data attribute.
+ *
+ * @param {string} keyCode
+ */
+const setActive = (keyCode) => {
+  const soundNode = document.getElementById(keyCode);
 
   if (soundNode) {
-
     document.querySelector(`.page`).setAttribute(`style`, `background: linear-gradient(to right, ${getRandomColorHsl()}, ${getRandomColorHsl()}`);
 
     soundNode.currentTime = 0;
@@ -19,28 +24,27 @@ function handleKeydown(e) {
 
     document.querySelectorAll(`.button-item`).forEach(item => {
       item.classList.remove(`button-item--clicked`);
-      if (item.dataset.keyCode === e.code) item.classList.add(`button-item--clicked`);
+      if (item.dataset.keyCode === keyCode) item.classList.add(`button-item--clicked`);
     });
   }
 }
 
 
+/**
+ * Handle event on keyDown
+ */
+function handleKeydown(e) {
+  setActive(e.code);
+}
+
+
+/**
+ * Handle event on click
+ */
 function handleClick(e) {
-  e.stopPropagation();
+  const button = e.target.classList.contains(`button-item`) ? e.target : e.target.closest(`.button-item`);
 
-  const soundNode = document.getElementById(e.target.dataset.keyCode)
-
-  if (soundNode) {
-    document.querySelector(`.page`).setAttribute(`style`, `background: linear-gradient(to right, ${getRandomColorHsl()}, ${getRandomColorHsl()}`);
-
-    soundNode.currentTime = 0;
-    soundNode.play();
-
-    document.querySelectorAll(`.button-item`).forEach(item => {
-      item.classList.remove(`button-item--clicked`);
-      if (item.dataset.keyCode === e.target.dataset.keyCode) item.classList.add(`button-item--clicked`);
-    });
-  }
+  if (button) setActive(button.dataset.keyCode);
 }
 
 document.addEventListener('keydown', handleKeydown);
