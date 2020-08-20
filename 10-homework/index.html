@@ -6,8 +6,31 @@
   <title>HW#10 "Події" - Oleksii Trypolskyi</title>
   <link rel="stylesheet" href="./index.css" >
 </head>
-<body>
-  <div id="app"></div>
+<body class="page">
+
+  <p class="description">Turn on volume and click on appropriate buttons on your keyboard!</p>
+  <div class="button-list">
+    <div data-key-code="KeyA" class="button-item button-item--clap">A <span>CLAP</span></div>
+    <div data-key-code="KeyS" class="button-item button-item--hihat">S <span>HIHAT</span></div>
+    <div data-key-code="KeyD" class="button-item button-item--kick">D <span>KICK</span></div>
+    <div data-key-code="KeyF" class="button-item button-item--openhat">F <span>OPENHAT</span></div>
+    <div data-key-code="KeyG" class="button-item button-item--boom">G <span>BOOM</span></div>
+    <div data-key-code="KeyH" class="button-item button-item--ride">H <span>RIDE</span></div>
+    <div data-key-code="KeyJ" class="button-item button-item--snare">J <span>SNARE</span></div>
+    <div data-key-code="KeyK" class="button-item button-item--tom">K <span>TOM</span></div>
+    <div data-key-code="KeyL" class="button-item button-item--tink">L <span>TINK</span></div>
+  </div>
+
+  <audio id="KeyA" src="./sounds/clap.wav"></audio>
+  <audio id="KeyS" src="./sounds/hihat.wav"></audio>
+  <audio id="KeyD" src="./sounds/kick.wav"></audio>
+  <audio id="KeyF" src="./sounds/openhat.wav"></audio>
+  <audio id="KeyG" src="./sounds/boom.wav"></audio>
+  <audio id="KeyH" src="./sounds/ride.wav"></audio>
+  <audio id="KeyJ" src="./sounds/snare.wav"></audio>
+  <audio id="KeyK" src="./sounds/tom.wav"></audio>
+  <audio id="KeyL" src="./sounds/tink.wav"></audio>
+
   <script src="./index.js"></script>
 </body>
 </html>

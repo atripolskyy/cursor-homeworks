@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  background-color: rgba(71, 118, 230, 1);
+  background: linear-gradient(to right, rgba(71, 118, 230, 1), rgba(142, 84, 233, 1));
+  transition: background-color 100ms linear;
+}
+
+.description {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.button-list {
+  height: 100%;
+  max-width: 40rem;
+  max-height: 40rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.button-item {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 1px 1px 10px rgba(233, 233, 233, 0.15);
+  cursor: pointer;
+}
+
+.button-item::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.button-item:hover {
+  box-shadow: inset 1px 1px 1px 10px rgba(233, 233, 233, 0.75);
+}
+
+.button-item span {
+  font-size: 1rem;
+}
+
+.button-item--clap::after {
+  background-image: url("./img/clap.jpg");
+}
+
+.button-item--hihat::after {
+  background-image: url("./img/hihat.jpg");
+}
+
+.button-item--kick::after {
+  background-image: url("./img/kick.jpg");
+}
+
+.button-item--openhat::after {
+  background-image: url("./img/openhat.jpg");
+}
+
+.button-item--boom::after {
+  background-image: url("./img/boom.jpg");
+}
+
+.button-item--ride::after {
+  background-image: url("./img/ride.jpg");
+}
+
+.button-item--snare::after {
+  background-image: url("./img/snare.jpg");
+}
+
+.button-item--tom::after {
+  background-image: url("./img/tom.jpg");
+}
+
+.button-item--tink::after {
+  background-image: url("./img/tink.jpg");
+}
+
+.button-item--clicked {
+  background-color: rgba(189, 95, 95, 0.5);
+  position: relative;
+}
+
+.button-item--clicked::after {
+  display: block;
+}
+
+.button-item--clicked:hover {
+  box-shadow: inset 1px 1px 1px 10px rgba(233, 233, 233, 0.15);
+}
+
