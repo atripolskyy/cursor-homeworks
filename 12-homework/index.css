@@ -1,0 +1,137 @@
+@font-face {
+  font-family: DIN Next W01 Regular;
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://static-mh.content.disney.io/starwars/assets/dinnext_reg/da088ecca53c4831a95b6fd81b5b338a-8a2a0a741793.eot?#iefix") format("embedded-opentype"),url("https://static-mh.content.disney.io/starwars/assets/dinnext_reg/da088ecca53c4831a95b6fd81b5b338a-2e0ebe27d3d5.woff") format("woff"),url("https://static-mh.content.disney.io/starwars/assets/dinnext_reg/da088ecca53c4831a95b6fd81b5b338a-5a9e92ecdad1.ttf") format("truetype"),url("https://static-mh.content.disney.io/starwars/assets/dinnext_reg/da088ecca53c4831a95b6fd81b5b338a-943f07abccb2.svg#da088ecc-a53c-4831-a95b-6fd81b5b338a") format("svg")
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
+  width: 100%;
+  padding: 2rem 0;
+  margin: 0;
+
+  background-color: #151515;
+  background-image: url("./img/background-stars.webp");
+  background-size: 1600px auto;
+  color: #999;
+  font-family: "DIN Next W01 Regular", Helvetica, Arial, sans-serif;
+}
+
+#app {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px solid #343434;
+  border-radius: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo img {
+  max-width: 220px;
+}
+
+.wrapper {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+}
+
+.section-title {
+  margin-top: 0;
+  padding: 0 0 0 1rem;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  border-top: 2px solid rgba(170, 170, 170, 0.25);
+  border-bottom: 2px solid rgba(170, 170, 170, 0.25);
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ddd;
+}
+
+.button {
+  height: 2.4rem;
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  background-color: #974848;
+}
+
+.section-title .button {
+  margin: 0;
+  border-left: 1px solid #343434;
+  border-right: 1px solid #343434;
+
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+}
+
+.button[disabled='true'] {
+  cursor: default;
+  background-color: #e29797;
+}
+
+.section-title .button[disabled='true'] {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.card-list {
+  /* border: 1px solid #343434; */
+}
+
+.card-list--planets {
+  /* max-height: 15rem;
+  overflow-y: scroll; */
+}
+
+.card-item {
+  height: 3rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.card-item svg {
+  max-width: 2rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.card-item svg path {
+  fill: #999;
+}
+
+.card-item + .card-item  {
+  border-top: 1px solid #343434;
+}
+
+.heroe__info {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
