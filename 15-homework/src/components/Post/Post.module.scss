@@ -1,0 +1,65 @@
+.card {
+  // padding: 40px;
+  position: relative;
+
+  color: #ffffff;
+  background: #100e17;
+  box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.7);
+}
+
+.cardAuthor {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  padding: 2rem 2rem 0;
+}
+
+.cardAuthorImg {
+  width: 50px;
+  height: 50px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.cardAuthorMeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+
+  color: #949494;
+}
+
+.cardAuthorName {
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.cardAuthorNick {
+  color: #949494;
+  font-weight: 400;
+}
+
+.cardTitle {
+  // font-weight: 400;
+  // color: #bfbfbf;
+  padding: 0 2rem;
+}
+
+.cardImg {
+  width: 100%;
+}
+
+.cardComments {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
